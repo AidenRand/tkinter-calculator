@@ -11,6 +11,7 @@ def make_equation(num):
     equation.set(expression)
 
 
+# when AC button pressed clear equation
 def clear_equation():
     global expression
 
@@ -18,14 +19,18 @@ def clear_equation():
     expression = ""
 
 
-def solve_eqaution():
-    print(expression)
+def solve_equation():
+    global expression
+
+    expression_box.delete(0, END)
+    equation.set(eval(expression))
+    expression = ""
 
 
 if __name__ == "__main__":
     root = Tk()
     root.geometry("350x530")
-    root.config(bg="#c3c3c3")
+    root.config(bg="#878787")
     root.title("Calculator")
 
     equation = StringVar()
@@ -49,25 +54,15 @@ if __name__ == "__main__":
         font=buttonFont,
         command=lambda: make_equation("%"),
     )
-    modulo_btn.place(x=30, y=150)
+    modulo_btn.place(x=110, y=150)
 
     sqr_btn = Button(
         root,
         width=4,
         height=1,
-        text="√",
+        text="x^",
         font=buttonFont,
-        command=lambda: make_equation("√"),
-    )
-    sqr_btn.place(x=110, y=150)
-
-    sqr_btn = Button(
-        root,
-        width=4,
-        height=1,
-        text="x²",
-        font=buttonFont,
-        command=lambda: make_equation("²"),
+        command=lambda: make_equation("**"),
     )
     sqr_btn.place(x=190, y=150)
 
@@ -120,7 +115,7 @@ if __name__ == "__main__":
         height=2,
         text="÷",
         font=buttonFont,
-        command=lambda: make_equation("÷"),
+        command=lambda: make_equation("/"),
     )
     div_btn.place(x=270, y=200)
 
@@ -161,7 +156,7 @@ if __name__ == "__main__":
         height=2,
         text="×",
         font=buttonFont,
-        command=lambda: make_equation("×"),
+        command=lambda: make_equation("*"),
     )
     mult_btn.place(x=270, y=280)
 
@@ -202,7 +197,7 @@ if __name__ == "__main__":
         height=2,
         text="–",
         font=buttonFont,
-        command=lambda: make_equation("–"),
+        command=lambda: make_equation("-"),
     )
     minus_btn.place(x=270, y=360)
 
@@ -228,7 +223,7 @@ if __name__ == "__main__":
     decimal_btn.place(x=110, y=440)
 
     equal_btn = Button(
-        root, width=4, height=2, text="=", font=buttonFont, command=solve_eqaution
+        root, width=4, height=2, text="=", font=buttonFont, command=solve_equation
     )
     equal_btn.place(x=190, y=440)
 
