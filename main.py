@@ -11,6 +11,17 @@ def make_equation(num):
     equation.set(expression)
 
 
+def clear_equation():
+    global expression
+
+    expression_box.delete(0, END)
+    expression = ""
+
+
+def solve_eqaution():
+    print(expression)
+
+
 if __name__ == "__main__":
     root = Tk()
     root.geometry("350x530")
@@ -68,7 +79,7 @@ if __name__ == "__main__":
         font=buttonFont,
         fg="#aa0a0a",
         activeforeground="#aa0a0a",
-        command=lambda: make_equation("AC"),
+        command=lambda: clear_equation(),
     )
     ac_btn.place(x=270, y=150)
 
@@ -212,17 +223,12 @@ if __name__ == "__main__":
         height=2,
         text="•",
         font=buttonFont,
-        command=lambda: make_equation("•"),
+        command=lambda: make_equation("."),
     )
     decimal_btn.place(x=110, y=440)
 
     equal_btn = Button(
-        root,
-        width=4,
-        height=2,
-        text="=",
-        font=buttonFont,
-        command=lambda: make_equation("="),
+        root, width=4, height=2, text="=", font=buttonFont, command=solve_eqaution
     )
     equal_btn.place(x=190, y=440)
 
@@ -235,11 +241,6 @@ if __name__ == "__main__":
         command=lambda: make_equation("+"),
     )
     plus_btn.place(x=270, y=440)
-
-
-def make_output_box():
-    output_box = Label(width=41, height=6, bg="#354331")
-    output_box.place(x=30, y=20)
 
 
 root.mainloop()
