@@ -29,7 +29,7 @@ def solve_equation():
 
 if __name__ == "__main__":
     root = Tk()
-    root.geometry("350x380")
+    root.geometry("310x380")
     root.config(bg="#c6c6c6")
     root.title("Calculator")
     root.option_add("*Button.Font", "aerial 14")
@@ -42,7 +42,7 @@ if __name__ == "__main__":
     expression_box = Entry(
         root,
         textvariable=equation,
-        width=19,
+        width=16,
         bg="#354331",
         font=box_font,
     )
@@ -53,14 +53,14 @@ if __name__ == "__main__":
         text="%",
         command=lambda: make_equation("%"),
     )
-    modulo_btn.place(x=110, y=110)
+    modulo_btn.place(x=95, y=110)
 
     sqr_btn = Button(
         root,
         text="x^",
         command=lambda: make_equation("**"),
     )
-    sqr_btn.place(x=190, y=110)
+    sqr_btn.place(x=160, y=110)
 
     ac_btn = Button(
         root,
@@ -70,7 +70,7 @@ if __name__ == "__main__":
         activeforeground="#aa0a0a",
         command=lambda: clear_equation(),
     )
-    ac_btn.place(x=270, y=110)
+    ac_btn.place(x=225, y=110)
 
     # second row
     seven_btn = Button(
@@ -85,14 +85,14 @@ if __name__ == "__main__":
         text="8",
         command=lambda: make_equation(8),
     )
-    eight_btn.place(x=110, y=160)
+    eight_btn.place(x=95, y=160)
 
     nine_btn = Button(
         root,
         text="9",
         command=lambda: make_equation(9),
     )
-    nine_btn.place(x=190, y=160)
+    nine_btn.place(x=160, y=160)
 
     div_btn = Button(
         root,
@@ -100,7 +100,7 @@ if __name__ == "__main__":
         text="÷",
         command=lambda: make_equation("/"),
     )
-    div_btn.place(x=270, y=160)
+    div_btn.place(x=225, y=160)
 
     # third row
     four_btn = Button(
@@ -115,14 +115,14 @@ if __name__ == "__main__":
         text="5",
         command=lambda: make_equation(5),
     )
-    five_btn.place(x=110, y=210)
+    five_btn.place(x=95, y=210)
 
     six_btn = Button(
         root,
         text="6",
         command=lambda: make_equation(6),
     )
-    six_btn.place(x=190, y=210)
+    six_btn.place(x=160, y=210)
 
     mult_btn = Button(
         root,
@@ -130,7 +130,7 @@ if __name__ == "__main__":
         text="×",
         command=lambda: make_equation("*"),
     )
-    mult_btn.place(x=270, y=210)
+    mult_btn.place(x=225, y=210)
 
     # fourth row
     one_btn = Button(
@@ -145,14 +145,14 @@ if __name__ == "__main__":
         text="2",
         command=lambda: make_equation(2),
     )
-    two_btn.place(x=110, y=260)
+    two_btn.place(x=95, y=260)
 
     three_btn = Button(
         root,
         text="3",
         command=lambda: make_equation(3),
     )
-    three_btn.place(x=190, y=260)
+    three_btn.place(x=160, y=260)
 
     minus_btn = Button(
         root,
@@ -160,7 +160,7 @@ if __name__ == "__main__":
         text="–",
         command=lambda: make_equation("-"),
     )
-    minus_btn.place(x=270, y=260)
+    minus_btn.place(x=225, y=260)
 
     # fifth row
     zero_btn = Button(
@@ -175,10 +175,10 @@ if __name__ == "__main__":
         text="•",
         command=lambda: make_equation("."),
     )
-    decimal_btn.place(x=110, y=310)
+    decimal_btn.place(x=95, y=310)
 
     equal_btn = Button(root, height=1, text="=", command=solve_equation)
-    equal_btn.place(x=190, y=310)
+    equal_btn.place(x=160, y=310)
 
     plus_btn = Button(
         root,
@@ -186,7 +186,6 @@ if __name__ == "__main__":
         text="+",
         command=lambda: make_equation("+"),
     )
-    plus_btn.place(x=270, y=310)
-
+    plus_btn.place(x=225, y=310)
 
 root.mainloop()
